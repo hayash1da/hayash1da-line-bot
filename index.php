@@ -27,8 +27,16 @@ foreach ($events as $event) {
     error_log('Non text message has come');
     continue;
   }
-  //$bot->replyText($event->getReplyToken(), $event->getText());
-  $bot->replyText($event->getReplyToken(), "ワン");
+
+  if(kakuritu(30)){
+    $bot->replyText($event->getReplyToken(), $event->getText());
+  }else{
+    $bot->replyText($event->getReplyToken(), "ワン");
+  }
+}
+
+function kakuritu($prob){
+  return rand(0,99) < $prob;
 }
 
  ?>

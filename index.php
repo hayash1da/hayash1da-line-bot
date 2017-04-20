@@ -27,7 +27,8 @@ foreach ($events as $event) {
     error_log('Non text message has come');
     continue;
   }
-  $bot->replyText($event->getReplyToken(), $event->getText()."ワン");
+  //$bot->replyText($event->getReplyToken(), $event->getText());
+  $bot->replyText($event->getReplyToken(), "ワン");
 }
 
  ?>
